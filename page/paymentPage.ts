@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export default class ShopPage {
+export default class PaymentPage {
 	readonly page: Page;
 	readonly placeOrderBtn: Locator;
 	readonly orderPlacedMsg: Locator;

@@ -1,17 +1,22 @@
 import { Locator, Page } from '@playwright/test';
 
-export default class ShopPage {
+export default class ProductPage {
 	readonly page: Page;
-	readonly product: Locator;
+	readonly quantity: Locator;
 	readonly addBtn: Locator;
+	readonly addedMsg: Locator;
+	readonly viewCartBtn: Locator;
 
 	constructor(page: Page) {
 		this.page = page;
-		this.product = page.locator('#quantity');
+		this.quantity = page.locator('#quantity');
 		this.addBtn = page.getByText('Add to cart');
+		this.addedMsg = page.locator('.modal-content:has-text("Added!")');
+		this.viewCartBtn = page.locator('a:has-text("View Cart")'); 
 	}
 
-	async getRandomNumber() {
-		await Math.floor(Math.random() * 20) + 1;
+	getRandomNumber() {
+		const randomNum = Math.floor(Math.random() * 20) + 1;
+		return randomNum.toString();
 	}
 }
