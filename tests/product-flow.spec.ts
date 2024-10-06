@@ -42,6 +42,7 @@ test.describe.serial(`Buy product flow`, async () => {
 	test(`Product page`, async ({}) => {
     	expect(productpage.quantity).toBeVisible();
     	await productpage.quantity.fill(productpage.getRandomNumber());
+		// to check getRandomNumber function
 		// console.log(productpage.getRandomNumber());
 		await productpage.addBtn.click();
 		const response = await page.waitForResponse(response => response.url().includes('/add_to_cart/3?quantity=') && response.status() === 200);
@@ -80,7 +81,7 @@ test.describe.serial(`Buy product flow`, async () => {
 		await signuppage.continueBtn.click();
 	});
 
-	test(`Cart page loggedin`, async ({}) => {
+	test(`Cart/Checkout pages loggedin`, async ({}) => {
     	await homepage.cart.click();
 		await page.waitForURL('**/view_cart');
 		await cartpage.proceedToCheckoutBtn.click();
