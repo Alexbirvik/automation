@@ -13,6 +13,7 @@ export default class ProductPage {
 		this.addBtn = page.getByText('Add to cart');
 		this.addedMsg = page.locator('.modal-content:has-text("Added!")');
 		this.viewCartBtn = page.locator('a:has-text("View Cart")'); 
+
 	}
 
 	getRandomNumber() {

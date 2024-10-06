@@ -5,7 +5,14 @@
 *Tech used: Playwright automation framework with TypeScript and Faker to generate user data.*
 *Two viewports: Chrome desktop and Chrome mobile on Pixel 5*
 
+POM: folder `page`
+Tests: folder `tests`
+All settings in `playwright.config.ts` in root folder
+
 ## Usage:
 1. execute `npm i` to install dependecies 
 2. to run tests execute `npx playwright test` 
-3. All settings in **playwright.config.ts**
+
+## Documentation:
+1. Playwright: https://playwright.dev/
+2. Faker: https://fakerjs.dev/

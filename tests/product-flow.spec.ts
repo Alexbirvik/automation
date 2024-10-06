@@ -7,6 +7,7 @@ import SignupPage from '../page/signupPage';
 import CheckoutPage from '../page/checkoutPage';
 import { faker } from '@faker-js/faker';
 
+// Tests implemented as a flow that is why it has a serial mode 
 test.describe.serial(`Buy product flow`, async () => {
 	let page: Page;
 	let homepage: Homepage;
@@ -29,6 +30,7 @@ test.describe.serial(`Buy product flow`, async () => {
 
 	test.afterAll(async () => await page.close());
 
+	// The following tests are stages of the flow devided mostly by different pages of an app
 	test(`Homepage products section`, async ({}) => {
 		await page.goto('/')
 		await page.waitForLoadState('load');

@@ -8,7 +8,7 @@ export default class CartPage {
 
 	constructor(page: Page) {
 		this.page = page;
-		this.cart = page.getByText('Cart').first();
+		this.cart = page.locator('a:has-text("Cart")');
 		this.proceedToCheckoutBtn = page.locator('.btn').filter({ hasText: 'Proceed To Checkout' });;
 		this.registerLoginBtn = page.locator('a:has-text("Register / Login")')
 	}
